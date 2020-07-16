@@ -15,7 +15,7 @@ import Firebase
 class MainVC: UIViewController {
     
    lazy var navController = UINavigationController(rootViewController: self.loginVC)
-    let loginVC = ViewController()
+    let loginVC = SignInVC()
     let label: UILabel = {
        let label = UILabel()
         label.text = "금액 정하는 화면"
@@ -43,7 +43,7 @@ class MainVC: UIViewController {
     }
 // MARK: LogOut/ Logout 되면 로그인 TextField reset
     @objc func didTapLogout() {
-        let loginVC = ViewController()
+        let loginVC = SignInVC()
         try? Auth.auth().signOut()
         navigationController?.navigationBar.topItem?.title = "로그인"
         navigationController?.navigationBar.prefersLargeTitles = true
