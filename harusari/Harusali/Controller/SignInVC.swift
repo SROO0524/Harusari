@@ -16,6 +16,7 @@ class SignInVC: UIViewController {
 
     
 // MARK: Property
+    let firestore = Firestore.firestore()
 
 let idTextField : UITextField = {
     let idTextField = UITextField()
@@ -75,6 +76,28 @@ let signupBT : UIButton = {
         Auth.auth().signIn(withEmail: idTextField.text!, password: passWordTextField.text!) { (user, error) in
             if user != nil {
                 print("login Success")
+                
+                guard let user = user?.user else {return}
+                self.firestore
+                    .collection("User")
+                    .document(user.uid)
+                    .getDocument { (snapshot, error) in
+                        if let error = error {
+                            print(error.localizedDescription)
+                        }else {
+                            guard
+                                let data = snapshot?.data(),
+                            let email = data[UserReference.email] as? String,
+                                let name = data[UserReference.name] as? String,
+                                let balance = data[UserReference.balance] as? String
+                                else {return}
+                            
+                            UserDefaults.standard.set(email, forKey: UserReference.email)
+                            UserDefaults.standard.set(name, forKey: UserReference.name)
+                            UserDefaults.standard.set(balance, forKey: UserReference.balance)
+                            
+                        }
+                }
                 self.dismiss(animated: true, completion: nil)
             }
             else{
