@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC3E6C7024C03BB600E61527 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E6C6F24C03BB600E61527 /* AccountVC.swift */; };
+		BC3E6C7324C03BDA00E61527 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E6C7224C03BDA00E61527 /* AccountView.swift */; };
 		DE38188E24BB47DA0011DC2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38188D24BB47DA0011DC2E /* AppDelegate.swift */; };
 		DE38189224BB47DA0011DC2E /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38189124BB47DA0011DC2E /* SignInVC.swift */; };
 		DE38189524BB47DA0011DC2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE38189324BB47DA0011DC2E /* Main.storyboard */; };
@@ -23,6 +25,8 @@
 /* Begin PBXFileReference section */
 		3143CE3A6340A977366FCF7C /* Pods_Harusali.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Harusali.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AA9F4F4BAD0ADA3DC2EBABC /* Pods-Harusali.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Harusali.release.xcconfig"; path = "Target Support Files/Pods-Harusali/Pods-Harusali.release.xcconfig"; sourceTree = "<group>"; };
+		BC3E6C6F24C03BB600E61527 /* AccountVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
+		BC3E6C7224C03BDA00E61527 /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		D21AD8E7154A24576FC445A5 /* Pods-Harusali.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Harusali.debug.xcconfig"; path = "Target Support Files/Pods-Harusali/Pods-Harusali.debug.xcconfig"; sourceTree = "<group>"; };
 		DE38188A24BB47DA0011DC2E /* Harusali.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Harusali.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE38188D24BB47DA0011DC2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +71,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BC3E6C7124C03BD300E61527 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC3E6C7224C03BDA00E61527 /* AccountView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		DE38188124BB47DA0011DC2E = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				DE38188D24BB47DA0011DC2E /* AppDelegate.swift */,
+				BC3E6C7124C03BD300E61527 /* View */,
 				DE58755224C029F600ECD4BA /* LottieView */,
 				DE56487E24BF5B9C00D94697 /* Model */,
 				DE3818A324BB65440011DC2E /* Controller */,
@@ -104,6 +117,7 @@
 		DE3818A324BB65440011DC2E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BC3E6C6F24C03BB600E61527 /* AccountVC.swift */,
 				DE3818A624BD900A0011DC2E /* MainVC.swift */,
 				DE38189124BB47DA0011DC2E /* SignInVC.swift */,
 				DE3818AC24BDF8CE0011DC2E /* SignUpVC.swift */,
@@ -246,6 +260,8 @@
 				DE56488024BF5BB400D94697 /* UserModel.swift in Sources */,
 				DE3818AD24BDF8CE0011DC2E /* SignUpVC.swift in Sources */,
 				DE38189224BB47DA0011DC2E /* SignInVC.swift in Sources */,
+				BC3E6C7024C03BB600E61527 /* AccountVC.swift in Sources */,
+				BC3E6C7324C03BDA00E61527 /* AccountView.swift in Sources */,
 				DE3818A724BD900A0011DC2E /* MainVC.swift in Sources */,
 				DE38188E24BB47DA0011DC2E /* AppDelegate.swift in Sources */,
 				DE58755424C02A3000ECD4BA /* LottieView.swift in Sources */,
