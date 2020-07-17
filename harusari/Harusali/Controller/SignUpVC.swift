@@ -116,6 +116,7 @@ class SignUpVC: UIViewController {
                         UserReference.email : email,
                         UserReference.name : name,
                         UserReference.balance : balance
+                        
                     ]) {(error) in
                         if let error = error {
                             completion(.failure(error))

@@ -86,7 +86,7 @@ class MainVC: UIViewController {
                 labeltextChangeTimer.invalidate()
                 UserDefaults.standard.set(self.selectMoney, forKey: UserReference.balance)
                 print("추첨된 금액은\(self.selectMoney)원 입니다.")
-                guard let userName = self.userName else {return}
+                guard let userName = UserDefaults.standard.string(forKey: UserReference.name) else {return}
                 let alert = UIAlertController(title: "알림", message:
                     """
                     오늘 \(userName)님의
@@ -163,6 +163,9 @@ class MainVC: UIViewController {
     
     @objc func didTapLogout() {
         try? Auth.auth().signOut()
+        UserDefaults.standard.set("", forKey: UserReference.name)
+        UserDefaults.standard.set("", forKey: UserReference.balance)
+        UserDefaults.standard.set("", forKey: UserReference.email)
         print("logout")
         navController.title = "Login"
         navController.navigationBar.prefersLargeTitles = true
