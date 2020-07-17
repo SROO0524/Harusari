@@ -9,8 +9,12 @@
 /* Begin PBXBuildFile section */
 		BC3E6C7024C03BB600E61527 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E6C6F24C03BB600E61527 /* AccountVC.swift */; };
 		BC3E6C7324C03BDA00E61527 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E6C7224C03BDA00E61527 /* AccountView.swift */; };
+
 		BCF3BE1124C15B8200DEA3E3 /* AddAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF3BE1024C15B8200DEA3E3 /* AddAccountVC.swift */; };
 		BCF3BE1324C15B9200DEA3E3 /* AddAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF3BE1224C15B9200DEA3E3 /* AddAccountView.swift */; };
+
+		D3CF41F924C08B0E00B03592 /* BMEULJIRO.otf in Resources */ = {isa = PBXBuildFile; fileRef = D3CF41F824C08AB900B03592 /* BMEULJIRO.otf */; };
+
 		DE38188E24BB47DA0011DC2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38188D24BB47DA0011DC2E /* AppDelegate.swift */; };
 		DE38189224BB47DA0011DC2E /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38189124BB47DA0011DC2E /* SignInVC.swift */; };
 		DE38189524BB47DA0011DC2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE38189324BB47DA0011DC2E /* Main.storyboard */; };
@@ -32,6 +36,7 @@
 		BCF3BE1024C15B8200DEA3E3 /* AddAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountVC.swift; sourceTree = "<group>"; };
 		BCF3BE1224C15B9200DEA3E3 /* AddAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountView.swift; sourceTree = "<group>"; };
 		D21AD8E7154A24576FC445A5 /* Pods-Harusali.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Harusali.debug.xcconfig"; path = "Target Support Files/Pods-Harusali/Pods-Harusali.debug.xcconfig"; sourceTree = "<group>"; };
+		D3CF41F824C08AB900B03592 /* BMEULJIRO.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = BMEULJIRO.otf; path = "이미지_폴더/BMEULJIRO.otf"; sourceTree = SOURCE_ROOT; };
 		DE38188A24BB47DA0011DC2E /* Harusali.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Harusali.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE38188D24BB47DA0011DC2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE38189124BB47DA0011DC2E /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -115,6 +120,7 @@
 				DE38189824BB47DE0011DC2E /* LaunchScreen.storyboard */,
 				DE38189B24BB47DE0011DC2E /* Info.plist */,
 				DE3818AA24BD93A10011DC2E /* GoogleService-Info.plist */,
+				D3CF41F824C08AB900B03592 /* BMEULJIRO.otf */,
 			);
 			path = Harusali;
 			sourceTree = "<group>";
@@ -209,6 +215,7 @@
 			files = (
 				DE38189A24BB47DE0011DC2E /* LaunchScreen.storyboard in Resources */,
 				DE3818AB24BD93A20011DC2E /* GoogleService-Info.plist in Resources */,
+				D3CF41F924C08B0E00B03592 /* BMEULJIRO.otf in Resources */,
 				DE38189724BB47DE0011DC2E /* Assets.xcassets in Resources */,
 				DE38189524BB47DA0011DC2E /* Main.storyboard in Resources */,
 			);
@@ -416,14 +423,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D21AD8E7154A24576FC445A5 /* Pods-Harusali.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Harusali/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.roobing.fastcampus;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.example.midum.Harusali;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -434,14 +440,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9AA9F4F4BAD0ADA3DC2EBABC /* Pods-Harusali.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Harusali/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.roobing.fastcampus;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.example.midum.Harusali;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

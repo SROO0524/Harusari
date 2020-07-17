@@ -19,11 +19,11 @@ var window: UIWindow?
         
         FirebaseApp.configure()
         
-        let firestore = Firestore.firestore()
+//        let firestore = Firestore.firestore()
         //        try! Auth.auth().signOut()
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = MainVC()
+        window?.rootViewController = UINavigationController(rootViewController: MainVC()) 
         window?.makeKeyAndVisible()
         
         
