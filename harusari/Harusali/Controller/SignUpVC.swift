@@ -103,10 +103,10 @@ class SignUpVC: UIViewController {
         Auth.auth().createUser(withEmail: email, password: password) {( result, error
             ) in
             if let error = error {
+                print("회원가입 불가")
                 completion(.failure(error))
-                
-                
             } else {
+                print("회원가입 성공")
                 guard let user = result?.user else {return}
                 self
                     .firestore
@@ -116,13 +116,13 @@ class SignUpVC: UIViewController {
                         UserReference.email : email,
                         UserReference.name : name,
                         UserReference.balance : balance
+                        
                     ]) {(error) in
                         if let error = error {
                             completion(.failure(error))
                         } else {
                             completion(.success("Success"))
                         }
-                        
                 }
                 
             }
@@ -166,7 +166,6 @@ class SignUpVC: UIViewController {
     
     
 // MARK: SetUpConstraints
-    
     private func setUpConstraints() {
         
         [nameTextField,passWordTextField,emailTextField,signUpBT].forEach {
@@ -190,12 +189,6 @@ class SignUpVC: UIViewController {
             signUpBT.topAnchor.constraint(equalTo: passWordTextField.bottomAnchor, constant: 20),
             signUpBT.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 50),
             signUpBT.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-            
-            
-            
         ])
-        
-        
     }
-    
 }

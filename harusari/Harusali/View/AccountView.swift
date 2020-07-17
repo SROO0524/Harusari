@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol PresentDelegate: class {
+    func presentView()
+}
+
 class AccountView: UIView {
     
     let tempViewForCallender = UIView()
@@ -16,9 +20,10 @@ class AccountView: UIView {
     let scrollView = UIScrollView()
     let addButton = UIButton()
     
+    weak var delegate: PresentDelegate?
+    
     struct addButtonSize {
-        static let width: CGFloat = 50
-        static let height: CGFloat = 50
+        static let widthHeight: CGFloat = 70
     }
     
     override init(frame: CGRect) {
@@ -33,8 +38,8 @@ class AccountView: UIView {
     }
     
     
-
     
+    // MARK: - Setup UI
     func setupUI() {
         tempViewForCallender.backgroundColor = .systemTeal
         
@@ -47,20 +52,22 @@ class AccountView: UIView {
         tempViewForTable.backgroundColor = .systemYellow
         
         addButton.backgroundColor = .systemGreen
-        
-        addButton.frame = CGRect(x: tempViewForTable.frame.size.height - addButtonSize.height, y: tempViewForTable.frame.size.width - addButtonSize.width, width: addButtonSize.width, height: addButtonSize.height)
-        self.addSubview(addButton)
+        addButton.layer.cornerRadius = addButtonSize.widthHeight / 2
+        addButton.setImage(UIImage(systemName: "plus"), for: .normal)
+        addButton.addTarget(self, action: #selector(addAccountList(_:)), for: .touchUpInside)
     }
     
+    // MARK: - Setup Constraint
     func setupConstraint() {
-        [moneyLabel, tempViewForCallender, tempViewForTable].forEach({
+        [moneyLabel, tempViewForCallender, tempViewForTable, addButton].forEach({
             self.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
-            
+        })
+        
+        [moneyLabel, tempViewForCallender, tempViewForTable].forEach({
             NSLayoutConstraint.activate([
             $0.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             $0.trailingAnchor.constraint(equalTo: self.trailingAnchor)])
-            
         })
         
         NSLayoutConstraint.activate([
@@ -71,8 +78,18 @@ class AccountView: UIView {
             moneyLabel.heightAnchor.constraint(equalToConstant: 50),
             
             tempViewForTable.topAnchor.constraint(equalTo: moneyLabel.bottomAnchor),
-            tempViewForTable.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            tempViewForTable.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             
+            addButton.widthAnchor.constraint(equalToConstant: addButtonSize.widthHeight),
+            addButton.heightAnchor.constraint(equalToConstant: addButtonSize.widthHeight),
+            addButton.trailingAnchor.constraint(equalTo: tempViewForTable.trailingAnchor, constant: -20),
+            addButton.bottomAnchor.constraint(equalTo: tempViewForTable.bottomAnchor, constant: -20)
         ])
+    }
+    
+    // MARK: - Selector
+    @objc func addAccountList(_ sender: UIButton) {
+        // present add Account VC delegate
+        delegate?.presentView()
     }
 }
