@@ -43,7 +43,6 @@ class MainVC: UIViewController {
     }
 // MARK: LogOut/ Logout 되면 로그인 TextField reset
     @objc func didTapLogout() {
-        let loginVC = SignInVC()
         try? Auth.auth().signOut()
         navigationController?.navigationBar.topItem?.title = "로그인"
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -57,8 +56,8 @@ class MainVC: UIViewController {
         if Auth.auth().currentUser == nil {
             print("ZZZZZ")
             DispatchQueue.main.async {
-                //navController.navigationItem.title = "Login"은 왜 안되었즤..?
-                self.navController.navigationBar.topItem?.title = "로그인"
+//                self.navController.navigationBar.topItem?.title = "로그인"
+                self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
                 self.navController.navigationBar.prefersLargeTitles = true
                 self.navController.modalPresentationStyle = .fullScreen
                 self.present(self.navController, animated: true)

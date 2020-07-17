@@ -158,6 +158,7 @@ class SignUpVC: UIViewController {
         
         //        self.navigationItem.title = "로그인"
         self.navigationController?.navigationBar.topItem?.title = "로그인"
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.popViewController(animated: true)
         self.navigationController?.modalPresentationStyle = .automatic

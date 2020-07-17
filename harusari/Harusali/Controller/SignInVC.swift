@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Lottie
 
 
 // MARK: Login ViewController
@@ -42,6 +43,15 @@ let loginBT : UIButton = {
     return loginBT
 }()
     
+let loginLabal : UILabel = {
+    let loginLabal = UILabel()
+    loginLabal.backgroundColor = .systemBlue
+    loginLabal.text = "로그인"
+    loginLabal.layer.cornerRadius = 10
+    return loginLabal
+    }()
+    
+    
 let signupBT : UIButton = {
     let signupBT = UIButton()
      signupBT.backgroundColor = .systemBlue
@@ -51,19 +61,36 @@ let signupBT : UIButton = {
         return signupBT
     }()
     
-    
+ let animationView : AnimationView = {
+    let animationView = AnimationView(name: "lf30_editor_alHpIE")
+    animationView.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
+    animationView.contentMode = .scaleAspectFit
+    animationView.loopMode = .playOnce
+    animationView.animationSpeed = 0.5
+     return animationView
+ }()
     
     
 // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        setupConstraints()
-    
+        
+        view.backgroundColor = .systemBackground
+        view.addSubview(animationView)
+        animationView.center = view.center
+        
+       // 애니메이션 실행
+        animationView.play{ (finish) in
+            print("애니메이션 끝")
+            self.view.backgroundColor = .white
+            self.animationView.removeFromSuperview()
+            self.setupConstraints()
+        
+            }
     }
     
     
-// MARK: KeyBoard UP
+// MARK: KeyBoard Up
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
         
@@ -108,6 +135,9 @@ let signupBT : UIButton = {
         }
         
         NSLayoutConstraint.activate([
+            
+        
+            
             idTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 200),
             idTextField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 50),
             idTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
