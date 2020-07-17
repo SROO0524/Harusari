@@ -28,9 +28,6 @@ class MainVC: UIViewController {
     //
     var buttonToggle = false
     
-    // userName
-    var userName = UserDefaults.standard.string(forKey: UserReference.name)
-    
     // Timer Setup
     var centerXChangeTimer = Timer()
     var labeltextChangeTimer = Timer()
@@ -183,7 +180,7 @@ class MainVC: UIViewController {
     }
     
     func showActivity() {
-        guard let userName = userName else {return}
+        guard let userName = UserDefaults.standard.string(forKey: UserReference.name) else {return}
         let shareText: String = """
         From. HaruSari
         \(userName)님의 하루살이가 시작되었습니다.
