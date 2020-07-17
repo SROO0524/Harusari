@@ -8,9 +8,9 @@
 
 import UIKit
 
-class AccountViewController: UIViewController {
+class AccountVC: UIViewController {
 
-    let accountView: UIView = AccountView()
+    let accountView = AccountView()
     
     let navibarRButton = UIBarButtonItem(image: UIImage(systemName: "house"), style: .done, target: self, action: #selector(navibarRButtonAction(_:)))
     
@@ -19,6 +19,7 @@ class AccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        accountView.delegate = self
         setupUI()
         setupConstraint()
     }
@@ -56,4 +57,11 @@ class AccountViewController: UIViewController {
     }
     
 
+}
+extension AccountVC: PresentDelegate {
+    func presentView() {
+        let vc = AddAccountVC()
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: true)
+    }
 }
