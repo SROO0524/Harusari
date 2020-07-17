@@ -1,3 +1,3 @@
 # Harusari
 
-test
+FastCampus Hackathon Team Project
